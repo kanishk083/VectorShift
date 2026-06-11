@@ -14,6 +14,18 @@ export const SubmitButton = () => {
     setResult(null);
     setError(null);
     setModalOpen(true);
+
+    console.table(nodes);
+    console.table(edges);
+
+    const nodeIds = new Set(nodes.map((n) => n.id));
+    const invalidEdges = edges.filter(
+      (e) => !nodeIds.has(e.source) || !nodeIds.has(e.target)
+    );
+    if (invalidEdges.length > 0) {
+      console.error("Invalid edges referencing non-existent nodes:", invalidEdges);
+    }
+
     try {
       const res = await submitPipeline(nodes, edges);
       setResult(res);

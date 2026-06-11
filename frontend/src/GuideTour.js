@@ -171,7 +171,7 @@ export const GuideTour = () => {
           left: coords.x,
           top: coords.y,
           zIndex: 999999,
-          transform: isFadingIn ? 'scale(0.1)' : 'scale(1) rotate(-1deg)',
+          transform: isFadingIn ? 'scale(0.1)' : 'scale(1)',
           opacity: isFadingIn ? 0 : 1,
           transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, left 0.5s cubic-bezier(0.16, 1, 0.3, 1), top 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}

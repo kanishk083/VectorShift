@@ -192,7 +192,7 @@ export const PropertiesPanel = () => {
         <textarea
           value={value}
           onChange={(e) => handleFieldChange(key, e.target.value)}
-          className="panel__field-textarea"
+          className="panel__field-textarea nodrag nopan nowheel"
           placeholder={`Enter ${formatFieldName(key).toLowerCase()}...`}
         />
       );
@@ -200,12 +200,17 @@ export const PropertiesPanel = () => {
 
     // Number Inputs
     if (key === 'duration' || key === 'maxTokens') {
+      const placeholderVal = key === 'duration' ? '5' : '1024';
       return (
         <input
           type="number"
-          value={value}
-          onChange={(e) => handleFieldChange(key, parseInt(e.target.value) || 0)}
-          className="panel__field-input"
+          value={value ?? ''}
+          placeholder={placeholderVal}
+          onChange={(e) => {
+            const val = e.target.value === '' ? '' : parseInt(e.target.value) || 0;
+            handleFieldChange(key, val);
+          }}
+          className="panel__field-input nodrag nopan nowheel"
         />
       );
     }

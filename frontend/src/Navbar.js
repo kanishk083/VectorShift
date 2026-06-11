@@ -1,5 +1,5 @@
 import React from 'react';
-import { Undo2, Redo2, Play, Zap, Share2, UploadCloud, HelpCircle } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 import { useStore } from './store';
 
 export const Navbar = () => {
@@ -34,38 +34,9 @@ export const Navbar = () => {
       </div>
 
       <div className="navbar__right">
-        <div className="navbar__actions">
-          <button className="navbar__action-btn" title="Undo">
-            <Undo2 size={16} />
-          </button>
-          <button className="navbar__action-btn" title="Redo">
-            <Redo2 size={16} />
-          </button>
-          <button className="navbar__action-btn navbar__action-btn--play" title="Run Pipeline">
-            <Play size={16} fill="currentColor" />
-          </button>
-        </div>
-
-        <div className="navbar__divider"></div>
-
-        <div className="navbar__credits">
-          <Zap size={14} className="navbar__credits-icon" fill="currentColor" />
-          <span>250 Credits</span>
-        </div>
-
         <button className="navbar__btn navbar__btn--outline" onClick={() => setTourActive(true)}>
           <HelpCircle size={14} />
           <span>Tour</span>
-        </button>
-
-        <button className="navbar__btn navbar__btn--outline">
-          <Share2 size={14} />
-          <span>Share</span>
-        </button>
-
-        <button className="navbar__btn navbar__btn--solid">
-          <UploadCloud size={14} />
-          <span>Publish</span>
         </button>
       </div>
     </header>

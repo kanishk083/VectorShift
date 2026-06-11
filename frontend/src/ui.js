@@ -171,12 +171,6 @@ const PipelineUIContent = () => {
         </button>
       </div>
 
-      {/* Auto-Save Indicator */}
-      <div className="auto-save">
-        <div className="auto-save__dot"></div>
-        <span>Auto-saved 2s ago</span>
-      </div>
-
       {nodes.length === 0 && (
         <div className="onboarding">
           <div className="onboarding__icon">
